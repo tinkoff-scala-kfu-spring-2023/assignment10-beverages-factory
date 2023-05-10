@@ -1,0 +1,19 @@
+on: 
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'project/**'
+      - 'build.sbt'
+    branches:
+      - master
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Tests CI
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run tests
+        uses: ./
